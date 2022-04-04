@@ -1,0 +1,9 @@
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ https://service-car.by/ [R=301,L]
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www.service-car.by$ [NC]
+RewriteRule ^(.*)$ https://service-car.by/$1 [R=301,L]
+
+RewriteCond %{SERVER_PORT} !^443$
+RewriteRule ^(.*)$ https://service-car.by/$1 [R=301,L]
